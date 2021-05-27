@@ -24,10 +24,10 @@ if you're familiar with using the command line & Python.
 3. [Firefox](https://www.mozilla.org/en-US/firefox/download/thanks/)
 4. [AutoIt](https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe)
     
-    NOTE: the app assumes you've installed AutoIt at `C:\Program Files (x86)\AutoIt3\AutoIt3.exe`. If that's not the case,
-      edit `AUTOIT_PATH` at the top of `build.py`. 
-5. [Python](https://docs.python.org/3/using/windows.html) 
-6. [Spotify Developer Account](https://developer.spotify.com)
+    NOTE: the app assumes you've installed AutoIt at `C:\Program Files (x86)\AutoIt3\AutoIt3.exe`. If that's not the case, edit `AUTOIT_PATH` at the top of `build.py`. 
+5. [Orba App v0.15.18](https://storage.googleapis.com/artiphon-web-content/Orba%20App/OrbaWinSetup-0.15.18.exe)
+6. [Python](https://docs.python.org/3/using/windows.html) 
+7. [Spotify Developer Account](https://developer.spotify.com)
 
 ## Setup 
 
