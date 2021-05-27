@@ -26,25 +26,28 @@ if you're familiar with installing software, using text editors, and modifying r
 
 ## Setup 
 
-0. Clone this repo or download the zip (green "Code" button to the top-right)
-1. Check you have Python 3 installed, and that your system's PATH environment variable includes the path to Python (trying typing `python` in a command-prompt window). 
-2. Edit the "path" property of "app/orba_autokey.json" to point to the location of "app/orba_autokey.bat" on your computer. Note that you'll need to escape the Windows directory separator, like this: `"path": "C:\\Users\\whatever\\path\\to\\orba-autokey\\src\\app\\orba_autokey.bat"`.
-3. Edit "orba_autokey.bat" to refer to the location of "orba_autokey.py" on your computer.
-4. Add a registry key containing the path to "orba_autokey.json" on your computer. See [App manifest location](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_manifests#Manifest_location) to find details of the registry key to add.
-5. Add environment variables for your Spotify credentials (needed to determine key of a song)
+0. Clone this repo or download the zip (green `Code` button to the top-right)
+1. Check you have Python 3 installed, and that your system's `PATH` environment variable includes the path to Python (trying typing `python` in a command-prompt window). 
+2. Edit the `path` property of "app/orba_autokey.json" to point to the location of "app/orba_autokey.bat" on your computer. Note that you'll need to escape the Windows directory separator, like this:
+
+       "path": "C:\\Users\\whatever\\path\\to\\orba-autokey\\src\\app\\orba_autokey.bat"
+4. Edit "orba_autokey.bat" to refer to the location of "orba_autokey.py" on your computer.
+5. Add a registry key containing the path to "orba_autokey.json" on your computer. See [App manifest location](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_manifests#Manifest_location) to find details of the registry key to add.
+6. Add environment variables for your Spotify credentials (needed to determine key of a song)
     1. Visit Spotify developer [dashboard](https://developer.spotify.com/dashboard/applications)
     2. Create a new Spotify application, and take note of the `Client ID` and `Client Secret`
     3. Open PowerShell
     4. `$Env:SPOTIPY_CLIENT_ID = "your_client_id"`
     5. `$Env:SPOTIPY_CLIENT_SECRET = "your_client_secret"`
-        1. NOTE: spoti**py** is _not_ a typo.
+
+       NOTE: spoti**py** is *not* a typo.
     6. Log out of Windows and back in again
 
 6. In PowerShell, run `python check_config_win.py` (helper script that comes with the Firefox extension template that this project is based on).
     - It should show `Looks good! Give it a try from Firefox.`.
     - If not, the registry key is incorrect or one of the other paths is incorrect - go back to step #2. 
 7. Open the Orba app! Almost there!
-8. Open `src/app/orba_autokey.au3` and follow the instructions to calibrate the app
+8. Open "src/app/orba_autokey.au3" and follow the instructions to calibrate the app
 
 ## Try it out!
 
@@ -55,7 +58,7 @@ if you're familiar with installing software, using text editors, and modifying r
     4. Select `src\add-on\manifest.json`
 
 2. You should see a new browser action icon in the toolbar
-3. Visit one of the supported music streaming sites
+3. Visit one of the supported music streaming sites ([Prerequisite](#prerequisites) 2)
 4. Play a song
 5. Watch your Orba auto tune itself to the correct key
 6. If nothing happens, it may be because there is no key information for this song. Try another.
@@ -66,7 +69,6 @@ if you're familiar with installing software, using text editors, and modifying r
 
 ## Gotchas
 
-If you have multiple music services open, each will be sending data to the app and you'll have some really annoying key changes. 
-For now, only use with one streaming service open at once. 
+If you have multiple music services open, each will be sending data to the app and you'll have some really annoying key changes. For now, only use with one streaming service open at once. 
 
 The YouTube support is pretty rudimentary; it just forwards the page title to the app. There's no support for grabbing the artist, so it'll be sending whatever you type in the search box, and then also when you click on a video. 
