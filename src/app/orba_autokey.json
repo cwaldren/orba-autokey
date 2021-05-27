@@ -1,0 +1,7 @@
+{
+  "name": "orba_autokey",
+  "description": "Example host for native messaging",
+  "path": "C:\\Users\\Casey\\Documents\\OrbaRust\\src\\app\\orba_autokey.bat",
+  "type": "stdio",
+  "allowed_extensions": [ "orba_autokey@example.org" ]
+}
