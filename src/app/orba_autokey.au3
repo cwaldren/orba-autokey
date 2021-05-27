@@ -1,14 +1,16 @@
 #include <MsgBoxConstants.au3>
 
-; NOTE! These coordinates must be measured on your own computer to account for your specific resolution and setup.
-; Unfortunately the Orba app doesn't use standard Windows controls, so we need to be pixel-perfect when clicking/moving the mouse.
+; Hello! AutoKey works by clicking on various buttons in the Orba app automatically.
+; Because everyone has different screen resolutions, and because the Orba app doesn't use standard Windows controls,
+; calibration is required. 
 ;
 ; Launch the "AutoIt Window Info" application that installs automatically with AutoIt.
 ; 1. Make sure Orba app is fullscreen. 
-; 2. Click on the "Finder Tool" in the AutoIt Window Info app (icon looks like a bullseye) and highlight the Orba window
-; 3. Drag the cursor onto each of the following coordinates, and fill them in with the correct coordinates:
+; 2. Click on the "Finder Tool" in the AutoIt Window Info app (looks like a bullseye) and highlight the Orba window
+; 3. Drag the cursor onto each of the following coordinates - described below - and fill them in. To see the coordinates, 
+;    click the right-arrow icon until you see the "Mouse" tab, which has a "Position" property. 
 
-; Center bullseye on the pencil icon at the top of Orba window (it needs to detect the color of the pensil - white if connected.)
+; Center bullseye on the pencil icon at the top of Orba window. Make sure you're over the white part of the pencil, not the background.
 Local $OrbaConnectedCoord[2] = [1057, 54]
 
 ; Click the pencil. Center the bullseye over the "Key" box.
@@ -17,7 +19,7 @@ Local $OrbaKeyCoord[2] = [858, 512]
 ; Center the bullseye over the mode (Maj / Min) box. 
 Local $OrbaModeCoord[2] = [936, 502]
 
-; All Done!
+; All Done! Go back to the README.
 
 
 
