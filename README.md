@@ -65,3 +65,12 @@ if you're familiar with installing software, using text editors, and modifying r
     1. On `about:debugging`, click `Inspect` on the extension
     2. `Menu > Web Developer > Browser Console`
     3. On the music player page, `Right Click > Inspect > Console`
+
+
+## Gotchas
+If you have multiple music services open, each will be sending data to the app and you'll have some really annoying key changes. 
+For now, only use with one streaming service open at once. 
+
+The YouTube support is pretty rudimentary; it just forwards the page title
+to the app. There's no support for grabbing the artist, so it'll be sending
+whatever you type in the search box, and then also when you click on a video. 

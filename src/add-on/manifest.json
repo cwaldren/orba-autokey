@@ -1,5 +1,4 @@
 {
-
   "description": "Changes the key of your Orba music machine based on currently-playing music.",
   "manifest_version": 2,
   "name": "Orba AutoKey",
@@ -7,36 +6,47 @@
   "icons": {
     "48": "icons/message.svg"
   },
-
   "browser_specific_settings": {
     "gecko": {
       "id": "orba_autokey@example.org",
       "strict_min_version": "50.0"
     }
   },
-
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
-
   "content_scripts": [
-  {
-    "matches": ["*://music.youtube.com/*"],
-    "js": ["youtube-music.js"]
-  },
-{
-  "matches" : ["*://www.youtube.com/*"],
-  "js": ["youtube.js"]
-},
-{
-  "matches" : ["*://open.spotify.com/*"],
-  "js": ["spotify.js"]
-}],
-
+    {
+      "matches": [
+        "*://music.youtube.com/*"
+      ],
+      "js": [
+        "content-scripts/youtube-music.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://www.youtube.com/*"
+      ],
+      "js": [
+        "content-scripts/youtube.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://open.spotify.com/*"
+      ],
+      "js": [
+        "content-scripts/spotify.js"
+      ]
+    }
+  ],
   "browser_action": {
     "default_icon": "icons/message.svg"
   },
-  
-  "permissions": ["nativeMessaging"]
-
+  "permissions": [
+    "nativeMessaging"
+  ]
 }
