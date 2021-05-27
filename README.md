@@ -2,6 +2,8 @@
 
 ## What?
 
+![OrbaAutokey](https://user-images.githubusercontent.com/5474173/119782132-a9df3100-be80-11eb-87cc-f4b35c8e6b1c.gif)
+
 This software enhances your improv music-making experience when using an [Orba](https://artiphon.com/pages/artiphon-shop) connected to a Windows PC over USB, by automatically configuring Orba's key based on a currently playing song.
 
 When playing a song, you often need to change the key programmed into the Orba in order for your improv to sound good. This means determining the correct key, opening the Orba app, and then modifying the key through the app's user-interface.
