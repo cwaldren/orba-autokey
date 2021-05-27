@@ -21,13 +21,15 @@ if you're familiar with installing software, using text editors, and modifying r
 2. [YouTube Music](https://music.youtube.com/), [YouTube](https://youtube.com), or [Spotify](https://open.spotify.com/)
 3. [Firefox](https://www.mozilla.org/en-US/firefox/download/thanks/)
 4. [AutoIt](https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe)
-5. [Python](https://docs.python.org/3/using/windows.html)
+5. [Python](https://docs.python.org/3/using/windows.html) 
 6. [Spotify Developer Account](https://developer.spotify.com)
 
 ## Setup 
 
 0. Clone this repo or download the zip (green "Code" button to the top-right)
 1. Check you have Python 3 installed, and that your system's PATH environment variable includes the path to Python (trying typing `python` in a command-prompt window). 
+    - Add dependency: `python -m pip install spotipy` ([get pip](https://pip.pypa.io/en/stable/installing/))
+
 2. Edit the "path" property of "app/orba_autokey.json" to point to the location of "app/orba_autokey.bat" on your computer. Note that you'll need to escape the Windows directory separator, like this: `"path": "C:\\Users\\whatever\\path\\to\\orba-autokey\\src\\app\\orba_autokey.bat"`.
 3. Edit "orba_autokey.bat" to refer to the location of "orba_autokey.py" on your computer.
 4. Add a registry key containing the path to "orba_autokey.json" on your computer. See [App manifest location](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_manifests#Manifest_location) to find details of the registry key to add.
