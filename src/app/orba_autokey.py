@@ -50,7 +50,7 @@ while True:
     lastQuery = query
 
     results = spotify.search(q=f'track:{query}', type='track')
-    if len(results) && len(results['tracks']) && len(results['tracks']['items']) && len(results['tracks']['items'][0]):
+    if len(results) and len(results['tracks']) and len(results['tracks']['items']) and len(results['tracks']['items'][0]):
         pass
     else:
         reply(f"no items for {query}")
