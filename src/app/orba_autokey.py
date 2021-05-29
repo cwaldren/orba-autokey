@@ -20,17 +20,15 @@ def getMessage():
 def encodeMessage(messageContent):
     encodedContent = json.dumps(messageContent).encode('utf-8')
     encodedLength = struct.pack('@I', len(encodedContent))
-    return {'length': encodedLength, 'content': encodedContent}
-
-def sendMessage(encodedMessage):
-    sys.stdout.buffer.write(encodedMessage['length'])
-    sys.stdout.buffer.write(encodedMessage['content'])
-    sys.stdout.buffer.flush()
+    return encodedLength, encodedContent
 
 def reply(msg):
-    sendMessage(encodeMessage(msg))
+    length, content = encodeMessage(msg)
+    sys.stdout.buffer.write(length)
+    sys.stdout.buffer.write(content)
+    sys.stdout.buffer.flush()
 
-# What follows is inelegant python. Sorry.
+# What follows is somewhat inelegant python. Sorry.
 
 # Holds previously determined key of song
 lastKey = ""
@@ -51,26 +49,17 @@ while True:
         continue
     lastQuery = query
 
-    results = spotify.search(q='track:' + query, type='track')
-    if len(results) == 0:
-        reply("no results for " + query)
-        continue
-    if len(results['tracks']) == 0:
-        reply("no tracks for " + query)
-        continue
-    if len(results['tracks']['items']) == 0:
-        reply("no items for " + query)
+    results = spotify.search(q=f'track:{query}', type='track')
+    if len(results) and len(results['tracks']) and len(results['tracks']['items']) and len(results['tracks']['items'][0]):
+        pass
+    else:
+        reply(f"no items for {query}")
         continue
 
     id = results['tracks']['items'][0]['id']
-    analysis = spotify.audio_analysis(id)["track"]
-    key = analysis["key"]
-    mode = analysis["mode"] 
+    analysis = spotify.audio_analysis(id)['track']
+    key, mode = analysis['key'], analysis['mode']
     if key != lastKey or mode != lastMode:
-        lastKey = key
-        lastMode = mode
-        reply("\"" + query + "\", " + keys[key] +" " + modes[mode])
+        lastKey, lastMode = key, mode
+        reply(f'"{query}", {keys[key]} {modes[mode]}')
         subprocess.check_call([os.getenv("AUTOIT_EXE"), "orba_autokey.au3", str(lastKey), str(lastMode)])
-   
-   
-    
